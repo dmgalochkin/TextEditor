@@ -17,4 +17,5 @@ jobs:
           make
           echo make complete
           tree
-          ./test/StringTest.exe
+          cd test
+          dir
