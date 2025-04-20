@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build & Test
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+          echo make complete
+          ./test/StringTest
