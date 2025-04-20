@@ -16,6 +16,4 @@ jobs:
           cmake ..
           make
           echo make complete
-          tree
-          cd test
           dir
