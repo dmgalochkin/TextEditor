@@ -16,4 +16,4 @@ jobs:
           cmake ..
           make
           echo make complete
-          ./test/StringTest
+          ./test/StringTest.exe
