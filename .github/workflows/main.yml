@@ -9,8 +9,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Repository tree
-        run: tree
       - name: Build & Test
         run: |
           mkdir build
@@ -19,4 +17,5 @@ jobs:
           make
           echo make complete
           ./test/StringTest.exe
-        
+      - name: Repository tree
+        run: tree
