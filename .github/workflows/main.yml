@@ -16,6 +16,5 @@ jobs:
           cmake ..
           make
           echo make complete
+          tree
           ./test/StringTest.exe
-      - name: Repository tree
-        run: tree
