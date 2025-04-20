@@ -16,4 +16,5 @@ jobs:
           cmake ..
           make
           echo make complete
-          dir
+          cd ..
+          tree /f
