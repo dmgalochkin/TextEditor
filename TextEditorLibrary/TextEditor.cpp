@@ -10,7 +10,8 @@ TextEditor::TextEditor()
   content = TString();
 }
 
-void TextEditor::SetLength(int length_) {
+void TextEditor::SetLength(int length_)
+{
   if (length_ <= 0)
     throw "Non positive length";
   length = length_;

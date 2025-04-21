@@ -183,13 +183,18 @@ bool TString::operator>(const TString &p)
 
 std::ostream& operator<<(std::ostream& o, TString& p)
 {
-  o << p.data;
+  for (int i = 0; i < p.size; ++i)
+  {
+    o << p.data[i];
+  }
   return o;
 }
 
 std::istream& operator>>(std::istream& i, TString& p)
 {
-  i >> p.data;
+  char buffer[256];
+  i >> buffer;
+  p.SetData(buffer);
   return i;
 }
 
@@ -316,7 +321,8 @@ char TString::MostFrequentChar()
   const int ASCII_SIZE = 128;
   int counts[ASCII_SIZE] = {0};
 
-  for (int i = 0; i < size; ++i) {
+  for (int i = 0; i < size; ++i)
+  {
     counts[data[i]]++;
   }
 
@@ -324,7 +330,8 @@ char TString::MostFrequentChar()
   char maxChar = '\0';
   for (int i = 0; i < ASCII_SIZE; ++i)
   {
-    if (counts[i] > maxCount) {
+    if (counts[i] > maxCount)
+    {
       maxCount = counts[i];
       maxChar = static_cast<char>(i);
     }
@@ -341,7 +348,8 @@ char* TString::GetUniqueChars(int &uniqueCount)
   for (int i = 0; i < size; ++i)
   {
     char c = data[i];
-    if (!was[c]) {
+    if (!was[c])
+    {
       was[c] = 1;
       uniqueCount++;
     }
